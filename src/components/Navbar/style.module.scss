@@ -1,0 +1,44 @@
+.header {
+  height: 8vh;
+  z-index: 9999 !important;
+}
+
+.mobile_nav,
+.desktop_nav {
+  min-height: 50px;
+  background-color: rgb(59, 59, 59);
+}
+
+.nav_btn {
+  margin-right: 6vw;
+}
+
+.mobile_menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 8vh; //mobile navbar height
+  background-color: rgb(59, 59, 59);
+  border-radius: 0px 0px 10px 0px;
+  width: 150px;
+  transform: translateX(calc(-100% - 10px));
+  transition: transform 0.2s ease-out;
+  a {
+    padding: 10px;
+  }
+  button {
+    padding: 5px 30px;
+    margin: 10px 0 20px 20px;
+  }
+}
+
+.open_menu {
+  transform: translateX(0) !important;
+  transition: transform 0.2s ease-out;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 8vh;
+  }
+}

@@ -1,0 +1,41 @@
+.footer {
+  .background {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.social_media_icons {
+  > span {
+    width: 20px;
+    height: 25px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer {
+    .content {
+      margin-inline: auto;
+      max-width: 320px;
+    }
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  .footer {
+    .social_media_icons {
+      > span {
+        width: 50px !important;
+        height: 40px !important;
+        img {
+          width: 40px !important;
+          height: 40px !important;
+        }
+      }
+    }
+  }
+}

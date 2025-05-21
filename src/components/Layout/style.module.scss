@@ -1,0 +1,9 @@
+.main_section {
+  min-height: 92vh; // 100vh - Desktop Nav height
+}
+
+@media (max-width: 768px) {
+  .main_section {
+    min-height: 92vh; // 100vh - Mobile Nav height
+  }
+}

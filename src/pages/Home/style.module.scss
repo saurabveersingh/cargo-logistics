@@ -1,0 +1,6 @@
+.landing_page {
+  background-image: url("/images/home/banner.jpg");
+  height: calc(100vh - 8vh); // 100vh - nav height
+  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 10px 10px black;
+}
