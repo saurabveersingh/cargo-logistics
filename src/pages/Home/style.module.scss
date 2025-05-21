@@ -4,3 +4,39 @@
   background-color: rgba(0, 0, 0, 0.5);
   text-shadow: 10px 10px black;
 }
+
+.qr_code {
+  background-image: url("/images/home/qr-code.png");
+  width: 500px;
+  height: 500px;
+}
+
+.app_showcase {
+  background-image: url("/images/home/app-showcase.png");
+  width: 500px;
+  height: 750px;
+}
+
+@media screen and (max-width: 992px) {
+  .qr_code {
+    width: calc(100vw - 6rem);
+    height: calc(100vw - 6rem);
+  }
+
+  .app_showcase {
+    width: calc(100vw - 4rem);
+    height: calc(130vw);
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  .qr_code {
+    width: 1000px;
+    height: 1000px;
+  }
+
+  .app_showcase {
+    width: 1000px;
+    height: 1500px;
+  }
+}

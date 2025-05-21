@@ -23,6 +23,26 @@ const Home = () => {
       >
         Welcome To Cargo Logistics!
       </section>
+      <section className={`${Device.isMobile ? `text-center` : `d-flex justify-content-evenly`} text-white bg-black`}>
+        <div className={`d-flex flex-column px-5 pt-4 overflow-scroll`}>
+          <h2 className="fs-30px h-100 d-flex justify-content-center align-items-center">Scan this QR to view this website!</h2>
+        </div>
+        <div className="p-5">
+          <div className={`bg-img-general ${Style.qr_code}`} />
+        </div>
+      </section>
+      <section
+        className={`${
+          Device.isMobile ? `text-center d-flex flex-column-reverse` : `d-flex justify-content-evenly`
+        } text-white bg-black`}
+      >
+        <div className="p-5">
+          <div className={`bg-img-general ${Style.app_showcase}`} />
+        </div>
+        <div className={`d-flex flex-column px-5 pt-4 overflow-scroll`}>
+          <h2 className="fs-30px h-100 d-flex justify-content-center align-items-center">Downloadable as a Mobile App!</h2>
+        </div>
+      </section>
     </>
   )
 }

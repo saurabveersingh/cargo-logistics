@@ -4,3 +4,4 @@ Checkout to project directory and execute following commands in terminal to run 
 2. npm run start
 
 Or visit deployment on :-<br/>
+https://cargo-logistics-prototype.netlify.app/
