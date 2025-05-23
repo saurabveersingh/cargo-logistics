@@ -4,7 +4,6 @@ import Layout from "./components/Layout"
 import Home from "./pages/Home"
 import AboutUs from "./pages/AboutUs"
 import EmergencyContacts from "./pages/EmergencyContacts"
-import Login from "./pages/Login"
 import Dashboard from "./pages/Dashboard"
 import TermsAndConditions from "pages/terms-and-conditions"
 import CookiesPolicy from "pages/cookies-policy"
@@ -20,7 +19,6 @@ const App = () => {
               <Route index element={<Home />} />
               <Route path="about-us" element={<AboutUs />} />
               <Route path="emergency-contacts" element={<EmergencyContacts />} />
-              <Route path="login" element={<Login />} />
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="terms-and-conditions" element={<TermsAndConditions />} />
               <Route path="cookies-policy" element={<CookiesPolicy />} />

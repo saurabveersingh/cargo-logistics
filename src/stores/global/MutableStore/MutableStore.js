@@ -13,6 +13,7 @@ import MutableReducer from "./MutableReducer"
 
 const initalState = {
   toast_message: { type: "", message: "" },
+  login: false,
   // to make more states, add them here and create action in MutableReducer
 }
 

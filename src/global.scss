@@ -473,6 +473,10 @@ input[type="reset"] {
   width: 40% !important;
 }
 
+.w-90{
+  width: 90% !important;
+}
+
 .w-100vw {
   width: 100vw !important;
 }
@@ -488,6 +492,10 @@ input[type="reset"] {
   @media screen and (min-width: 2500px) {
     height: calc($size * 2) !important;
   }
+}
+
+.default-section-height{
+  height: 92vh // 100vh - 8vh (Navbar);
 }
 
 .h-fit-content {

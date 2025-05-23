@@ -1,7 +1,7 @@
 import { useContext, useRef, useState, useEffect } from "react"
 
 import { MutableContext } from "../../stores/global/MutableStore/MutableStore"
-import { TOAST_MESSAGE } from "../../stores/global/MutableStore/MutableActions"
+import { TOAST_MESSAGE, LOGIN } from "../../stores/global/MutableStore/MutableActions"
 import { DeviceContext } from "../../stores/global/DeviceStore"
 
 import Style from "./style.module.scss"
@@ -23,6 +23,16 @@ const Navbar = () => {
 
   const menu_btn = useRef()
   const menu = useRef()
+
+  useEffect(() => {
+    const cachedRole = localStorage.getItem("role")
+    const cachedUsername = localStorage.getItem("username")
+    const cachedPassword = localStorage.getItem("password")
+
+    if (cachedRole && cachedUsername && cachedPassword) {
+      dispatch({ type: LOGIN, payload: true })
+    }
+  }, [])
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
@@ -57,22 +67,22 @@ const Navbar = () => {
           <Image src={require("images/ship-icon.png")} alt={"logo"} width={40} height={40} />
         </a>
         <div className="d-flex justify-content-end align-items-center">
-          <a
-            onClick={() => {
-              dispatch({ type: TOAST_MESSAGE, payload: { type: "error", message: "Not Implemented" } })
-            }}
-            className={`pointer ${Style.nav_btn}`}
-          >
-            Emergency Contacts
+          <a href="/dashboard" className={`pointer ${Style.nav_btn}`}>
+            Dashboard
           </a>
           <a
             className="me-2"
-            href="/login"
+            href="/dashboard"
             onClick={() => {
-              dispatch({ type: TOAST_MESSAGE, payload: { type: "error", message: "Not Implemented" } })
+              if (state.login) {
+                localStorage.removeItem("role")
+                localStorage.removeItem("username")
+                localStorage.removeItem("password")
+                dispatch({ type: LOGIN, payload: false })
+              }
             }}
           >
-            Login
+            {state.login ? "Logout" : "Login"}
           </a>
         </div>
       </nav>
@@ -116,16 +126,24 @@ const Navbar = () => {
         >
           About us
         </a>
-        <a
-          onClick={() => {
-            dispatch({ type: TOAST_MESSAGE, payload: { type: "error", message: "Not Implemented" } })
-          }}
-          className={`${Style.nav_btn}`}
-        >
-          Emergency Contacts
+        <a href="/dashboard" className={`${Style.nav_btn}`}>
+          Dashboard
         </a>
-        <a href="/login">
-          <button className="br-10px w-fit-content bg-darkcyan">Login</button>
+        <a href="/dashboard">
+          <button
+            className="br-10px w-fit-content bg-darkcyan"
+            onClick={() => {
+              if (state.login) {
+                localStorage.removeItem("role")
+                localStorage.removeItem("username")
+                localStorage.removeItem("password")
+
+                dispatch({ type: LOGIN, payload: false })
+              }
+            }}
+          >
+            {state.login ? "Logout" : "Login"}
+          </button>
         </a>
       </div>
     )
