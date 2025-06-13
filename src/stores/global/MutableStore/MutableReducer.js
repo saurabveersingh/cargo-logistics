@@ -1,4 +1,4 @@
-import { TOAST_MESSAGE } from "./MutableActions"
+import { TOAST_MESSAGE, LOGIN } from "./MutableActions"
 
 // !definition of component
 /**
@@ -14,6 +14,11 @@ const MutableReducer = (state, action) => {
       return {
         ...state,
         toast_message: action.payload,
+      }
+    case LOGIN: // ← Handle login flag
+      return {
+        ...state,
+        login: action.payload,
       }
     default:
       return state
